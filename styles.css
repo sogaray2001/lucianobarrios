@@ -1,18 +1,13 @@
-  /* --- PALETA "ESTUDIO DE OBRA CÁLIDA" --- */
-/* Negro elegante + dorado ladrillo + marrón cemento + naranja construcción + amarillo obra */
-
+ /* --- VARIABLES (Asegúrate de tenerlas arriba para que los colores funcionen) --- */
 :root {
-    --negro: #1a1a1a;
-    --gris-oscuro: #2b2b2b;
-    --gris-suave: #b8b8b8;
+    --naranja-obra: #f39c12;
+    --amarillo-obra: #f1c40f;
+    --amarillo-suave: #f9e79f;
     --dorado: #c49a6c;
-    --dorado-hover: #d6b57b;
-    --naranja-obra: #d35400;
+    --negro: #1a1a1a;
+    --texto-claro: #ffffff;
+    --gris-suave: #bdc3c7;
     --naranja-brillo: #e67e22;
-    --amarillo-obra: #f9a825;
-    --amarillo-suave: #fbc02d;
-    --texto-claro: #f5f5f5;
-    --rojo-logo: #d32f2f;
 }
 
 /* --- GENERALES --- */
@@ -30,9 +25,23 @@ header {
     background: linear-gradient(90deg, var(--naranja-obra), var(--amarillo-obra));
     color: #fff;
     text-align: center;
-    padding: 40px 20px 25px;
+    padding: 30px 20px 25px; /* Reduje un poco el padding superior */
     border-bottom: 5px solid var(--dorado);
     box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+/* --- NUEVO: ESTILO DEL LOGO --- */
+.logo {
+    width: 120px;               /* Tamaño del logo */
+    height: auto;                /* Mantiene la forma */
+    display: block;              /* Lo pone en su propia línea */
+    margin: 0 auto 15px;         /* Lo centra y le da espacio abajo */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3)); /* Sombra para que resalte */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);      /* Efecto sutil al pasar el mouse */
 }
 
 header h1 {
@@ -93,65 +102,6 @@ section h2 {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-/* --- BIENVENIDA --- */
-#bienvenida {
-    background: linear-gradient(180deg, rgba(243, 156, 18, 0.1), rgba(0,0,0,0.7));
-}
-
-#bienvenida p {
-    max-width: 800px;
-    margin: 0 auto;
-    color: var(--gris-suave);
-    font-size: 1.1em;
-}
-
-/* --- PERFIL --- */
-#perfil {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(34, 34, 34, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(243, 156, 18, 0.3);
-    padding: 30px;
-    border-left: 5px solid var(--naranja-obra);
-}
-
-#perfil p {
-    color: #f0e6d2;
-    font-size: 1.1em;
-    line-height: 1.8;
-}
-
-/* --- SERVICIOS --- */
-#servicios {
-    background: linear-gradient(180deg, rgba(226, 148, 41, 0.1), rgba(0,0,0,0.7));
-}
-
-.servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.servicio {
-    background-color: rgba(34, 34, 34, 0.9);
-    color: var(--texto-claro);
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 193, 7, 0.4);
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.servicio:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(180deg, rgba(243, 156, 18, 0.2), rgba(0,0,0,0.8));
-    border-color: var(--amarillo-obra);
-    box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
-}
-
 /* --- GALERÍA --- */
 .galeria {
     display: grid;
@@ -171,11 +121,6 @@ section h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.galeria img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 167, 38, 0.6);
-}
-
 /* --- CONTACTO --- */
 .contacto {
     background: linear-gradient(180deg, rgba(255, 183, 77, 0.15), rgba(0,0,0,0.8));
@@ -185,16 +130,6 @@ section h2 {
     margin: 50px auto;
     box-shadow: 0 0 25px rgba(243, 156, 18, 0.3);
     text-align: center;
-}
-
-.contacto h2 {
-    color: var(--amarillo-suave);
-}
-
-.contacto p {
-    color: var(--gris-suave);
-    margin-bottom: 12px;
-    font-size: 1.05em;
 }
 
 .btn-whatsapp {
@@ -208,17 +143,6 @@ section h2 {
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.btn-whatsapp:hover {
-    background-color: #1ebe57;
-    transform: scale(1.05);
-}
-
-.email-info {
-    color: var(--gris-suave);
-    font-style: italic;
-    margin-top: 10px;
-}
-
 /* --- FOOTER --- */
 footer {
     text-align: center;
@@ -227,25 +151,11 @@ footer {
     font-size: 0.9em;
     border-top: 3px solid var(--naranja-brillo);
     background: linear-gradient(90deg, #111, #2b2b2b);
-    letter-spacing: 0.5px;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    nav {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    header h1 {
-        font-size: 2em;
-    }
-
-    .galeria img {
-        height: 180px;
-    }
-
-    #perfil, .contacto {
-        padding: 20px;
-    }
+    header h1 { font-size: 2em; }
+    .logo { width: 90px; } /* Logo más chico en celular */
 }
+  
