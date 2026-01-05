@@ -32,7 +32,7 @@ header {
 
 /* --- NUEVO: ESTILO DEL LOGO --- */
 .logo {
-    width: 120px;               /* Tamaño del logo */
+    width: 80px;               /* Tamaño del logo */
     height: auto;                /* Mantiene la forma */
     display: block;              /* Lo pone en su propia línea */
     margin: 0 auto 15px;         /* Lo centra y le da espacio abajo */
@@ -159,3 +159,4 @@ footer {
     .logo { width: 90px; } /* Logo más chico en celular */
 }
   
+
