@@ -32,16 +32,16 @@ header {
 
 /* EFECTO DEL LOGO */
 .logo {
-    width: 120px;
-    height: auto;
+    width: 120px !important;
+    height: auto !important;
     display: block;
     margin: 0 auto 15px;
     filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
-    transition: transform 0.3s ease; /* Efecto de suavidad */
+    transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.05); /* El logo se agranda un poquito al pasar el mouse */
+    transform: scale(1.05);
 }
 
 header h1 {
@@ -58,7 +58,7 @@ header p {
     margin-top: 8px;
 }
 
-/* --- NAVBAR (Tu efecto de menú) --- */
+/* --- NAVBAR --- */
 nav {
     display: flex;
     justify-content: center;
@@ -74,12 +74,12 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
-    transition: color 0.3s ease, transform 0.3s ease; /* Efecto de suavidad */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
     color: var(--amarillo-obra);
-    transform: scale(1.05); /* Se agranda al pasar el mouse */
+    transform: scale(1.05);
 }
 
 /* --- SECCIONES --- */
@@ -118,37 +118,31 @@ section h2 {
     transition: all 0.3s ease;
 }
 
-.servicio:hover {
-    transform: translateY(-5px);
-    border-color: var(--amarillo-obra);
-    box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
-}
-
-/* --- GALERÍA (Tu efecto de imágenes) --- */
+/* --- GALERÍA (CORREGIDA) --- */
 .galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 15px !important;
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .galeria img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
+    width: 100% !important;
+    height: 230px !important; /* Esto evita que sean enormes */
+    object-fit: cover !important; /* Esto evita que se estiren */
     border-radius: 10px;
     border: 2px solid rgba(255, 167, 38, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s; /* Efecto de suavidad */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .galeria img:hover {
-    transform: scale(1.05); /* Las fotos se agrandan al pasar el mouse */
+    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 167, 38, 0.6);
 }
 
-/* --- CONTACTO Y BOTÓN WHATSAPP --- */
+/* --- CONTACTO --- */
 .contacto {
     background: linear-gradient(180deg, rgba(255, 183, 77, 0.15), rgba(0,0,0,0.8));
     padding: 40px;
@@ -171,7 +165,7 @@ section h2 {
 
 .btn-whatsapp:hover {
     background-color: #1ebe57;
-    transform: scale(1.05); /* El botón se agranda un poquito */
+    transform: scale(1.05);
 }
 
 /* --- FOOTER --- */
@@ -183,10 +177,10 @@ footer {
     background: linear-gradient(90deg, #111, #2b2b2b);
 }
 
-/* --- RESPONSIVE (Celulares) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     header h1 { font-size: 2em; }
-    .logo { width: 90px; }
+    .logo { width: 90px !important; }
     nav { gap: 15px; }
+    .galeria img { height: 200px !important; }
 }
-
