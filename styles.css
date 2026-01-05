@@ -101,6 +101,7 @@ section h2 {
     letter-spacing: 1px;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
+}
 
 /* --- GALERÍA --- */
 .galeria {
@@ -159,5 +160,6 @@ footer {
     .logo { width: 90px; } /* Logo más chico en celular */
 }
   
+
 
 
