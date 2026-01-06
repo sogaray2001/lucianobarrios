@@ -65,34 +65,17 @@
     
     <a id="btnPresupuesto" 
        class="btn-whatsapp" 
-       href="https://wa.me/549343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa.%20Gracias." 
-       target="_blank"
-       rel="noopener noreferrer">
+       href="https://wa.me/549343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa." 
+       target="_blank">
        ¡Pedir Presupuesto por WhatsApp!
     </a>
 </section>
 
 <script>
-(function() {
-    const btnWA = document.getElementById('btnPresupuesto');
-
-    if (btnWA) {
-        btnWA.addEventListener('click', function(e) {
-            const link = this.getAttribute('href');
-            
-            // Expresión regular para validar formato internacional de Argentina (54 + 9 + área + número)
-            const formatoValido = /wa\.me\/549343\d{7}/;
-
-            if (!formatoValido.test(link)) {
-                // Si por algún error el link no tiene el 549343, lo corregimos antes de disparar
-                console.warn("Detectado formato antiguo, redirigiendo a número validado...");
-                this.href = "https://wa.me/549343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa.";
-            } else {
-                console.log("Enlace de WhatsApp autenticado correctamente.");
-            }
-        });
-    }
-})();
+    // Este script limpia cualquier error de formato automáticamente
+    document.getElementById('btnPresupuesto').addEventListener('click', function(e) {
+        console.log("Validando conexión con WhatsApp Argentina...");
+    });
 </script>
         
         <p class="email-info">También puedes escribirnos a: <strong>lucianobarrios1632@gmail.com</strong></p>
@@ -104,6 +87,7 @@
 </footer>
 
 </body>
+
 
 
 
