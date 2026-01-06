@@ -58,14 +58,42 @@
         </div>
     </section>
 
-    <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        <p>Zona de trabajo: Villa Hernandarias y alrededores.</p>
-        <p>Teléfono: <strong>+54 9 3434 92568</strong></p>
-        
-        <a class="btn-whatsapp" 
-           href="https://wa.me/54343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa.%20Gracias." 
-           target="_blank">¡Pedir Presupuesto por WhatsApp!</a>
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>Zona de trabajo: Villa Hernandarias y alrededores.</p>
+    <p>Teléfono: <strong>+54 9 343 492 568</strong></p>
+    
+    <a id="btnPresupuesto" 
+       class="btn-whatsapp" 
+       href="https://wa.me/549343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa.%20Gracias." 
+       target="_blank"
+       rel="noopener noreferrer">
+       ¡Pedir Presupuesto por WhatsApp!
+    </a>
+</section>
+
+<script>
+(function() {
+    const btnWA = document.getElementById('btnPresupuesto');
+
+    if (btnWA) {
+        btnWA.addEventListener('click', function(e) {
+            const link = this.getAttribute('href');
+            
+            // Expresión regular para validar formato internacional de Argentina (54 + 9 + área + número)
+            const formatoValido = /wa\.me\/549343\d{7}/;
+
+            if (!formatoValido.test(link)) {
+                // Si por algún error el link no tiene el 549343, lo corregimos antes de disparar
+                console.warn("Detectado formato antiguo, redirigiendo a número validado...");
+                this.href = "https://wa.me/549343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa.";
+            } else {
+                console.log("Enlace de WhatsApp autenticado correctamente.");
+            }
+        });
+    }
+})();
+</script>
         
         <p class="email-info">También puedes escribirnos a: <strong>lucianobarrios1632@gmail.com</strong></p>
     </section>
@@ -76,6 +104,7 @@
 </footer>
 
 </body>
+
 
 
 
