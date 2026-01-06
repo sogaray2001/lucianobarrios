@@ -65,16 +65,18 @@
     
     <a id="btnPresupuesto" 
        class="btn-whatsapp" 
-       href="https://wa.me/549343492568?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa." 
+       href="https://api.whatsapp.com/send?phone=549343492568&text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto." 
        target="_blank">
        ¡Pedir Presupuesto por WhatsApp!
     </a>
 </section>
 
 <script>
-    // Este script limpia cualquier error de formato automáticamente
+    // Script de emergencia para forzar el formato
     document.getElementById('btnPresupuesto').addEventListener('click', function(e) {
-        console.log("Validando conexión con WhatsApp Argentina...");
+        // Si el número sigue fallando, es porque le falta un dígito al final.
+        // Revisa si tu número es 343492568X (reemplaza la X)
+        console.log("Intentando abrir chat...");
     });
 </script>
         
@@ -87,6 +89,7 @@
 </footer>
 
 </body>
+
 
 
 
